@@ -2,6 +2,7 @@ import styles from "./style.module.scss";
 import { motion } from "framer-motion";
 import { links, footerLinks } from "./data";
 import { perspective, slideIn } from "./anim";
+import FlipButton from "@/components/ui/FlipButton";
 
 export default function index() {
   return (
@@ -19,7 +20,9 @@ export default function index() {
                 animate="enter"
                 exit="exit"
               >
-                <a>{title}</a>
+                <a className="font-semibold text-left w-fit flex justify-start">
+                  <FlipButton label={title} />
+                </a>
               </motion.div>
             </div>
           );
@@ -35,9 +38,12 @@ export default function index() {
               initial="initial"
               animate="enter"
               exit="exit"
+              className="font-semibold"
               key={`f_${i}`}
             >
-              {title}
+              <a className="font-semibold text-left w-fit flex justify-start">
+                <FlipButton label={title} />
+              </a>
             </motion.a>
           );
         })}

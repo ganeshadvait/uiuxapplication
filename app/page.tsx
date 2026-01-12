@@ -7,7 +7,8 @@ import PinnedImageReveal from "@/components/pinnedImageReveal";
 import ZeroExpansion from "@/components/zeroexpansion";
 import FlipCarousel from "@/components/flipcarousel";
 import Header from "@/components/aheader";
-import IntfiniteScroll from "@/components/inifnite-scroll";  
+import IntfiniteScroll from "@/components/inifnite-scroll";
+import FeaturesSection from "@/components/scrollreveal";
 
 
 export default function HomePage() {
@@ -19,6 +20,8 @@ export default function HomePage() {
       <FlipCarousel />
       <IntfiniteScroll />
       <Header />
+      <FeaturesSection />
+  
     </>
   );
 }

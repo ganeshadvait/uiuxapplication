@@ -1,22 +1,18 @@
-.button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
-  height: 40px;
+.flipbutton {
+  width: 100%;
   cursor: pointer;
   border-radius: 25px;
   overflow: hidden;
 
-  .slider {
+  .flipslider {
     position: relative;
     width: 100%;
     height: 100%;
 
-    .el {
+    .flipel {
       width: 100%;
       height: 100%;
-      background-color: #c9fd74;
+   
       p {
         margin: 0px;
       }
@@ -27,7 +23,7 @@
         }
       }
       &:hover {
-        .perspectiveText {
+        .flipperspectiveText {
           transform: rotateX(90deg);
           p {
             &:nth-of-type(1) {
@@ -44,11 +40,11 @@
   }
 }
 
-.perspectiveText {
+.flipperspectiveText {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100%;
   width: 100%;
   transform-style: preserve-3d;

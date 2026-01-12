@@ -1,12 +1,16 @@
+//File : components/tabs.tsx
 "use client";
 import { useState, useRef } from "react";
+import styles from "./Header/button/style.module.scss";
 
 import IntfiniteScroll from "@/components/inifnite-scroll";
 import InfiniteScrollLandscape from "@/components/infinite-scroll-landscape";
+import FlipButton from "@/components/ui/FlipButton";
 
 export default function Tabs() {
   const [isWeb, setIsWeb] = useState(true);
   const showcaseRef = useRef<HTMLElement | null>(null);
+  const [isActive, setIsActive] = useState(false);
 
   const scrollToShowcase = () => {
     // Smoothly scroll to the work-showcase section
@@ -30,11 +34,21 @@ export default function Tabs() {
               scrollToShowcase();
             }}
             aria-pressed={isWeb}
-            className={` w-full rounded-full transition-colors font-bold py-4 px-6  ${
-              isWeb ? "bg-black text-white" : "text-gray-800 hover:bg-gray-100"
+            className={` tabBtn w-full rounded-full font-bold py-4 px-6 ${
+              isWeb
+                ? "bg-[#c9fd74] text-black"
+                : "text-gray-800 hover:bg-gray-100"
             }`}
           >
-            Web
+            <FlipButton
+              isActive={isWeb}
+              toggleMenu={() => {
+                setIsWeb(true);
+                scrollToShowcase();
+              }}
+              className="justify-center items-center"
+              label="Web"
+            />
           </button>
           <button
             onClick={() => {
@@ -42,15 +56,24 @@ export default function Tabs() {
               scrollToShowcase();
             }}
             aria-pressed={!isWeb}
-            className={` w-full rounded-full transition-colors font-bold py-4 px-6  ${
+            className={`tabBtn w-full rounded-full font-bold py-4 px-6 ${
               !isWeb
-                ? "bg-black text-white"
-                : " text-gray-800 hover:bg-gray-100"
+                ? "bg-[#c9fd74] text-black"
+                : "text-gray-800 hover:bg-gray-100"
             }`}
           >
-            Mobile
+            <FlipButton
+              isActive={!isWeb}
+              toggleMenu={() => {
+                setIsWeb(false);
+                scrollToShowcase();
+              }}
+              className="justify-center items-center"
+              label="Mobile"
+            />
           </button>
         </div>
+
         <section id="work-showcase" ref={showcaseRef} className="bg-[#09090B]">
           {isWeb ? <InfiniteScrollLandscape /> : <IntfiniteScroll />}
         </section>
