@@ -358,12 +358,6 @@ export const FrequencyCircle = forwardRef<
           </div>
         </div>
 
-        {/* Extra space for demo */}
-        <div className="h-screen bg-gradient-to-b from-gray-50 to-white flex items-center justify-center">
-          <p className="text-gray-400 text-lg">
-            Scroll up to see the animation again
-          </p>
-        </div>
       </>
     );
   }

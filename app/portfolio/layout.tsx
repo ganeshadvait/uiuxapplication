@@ -9,7 +9,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* <Header /> */}
     <main>{children}</main>
       <WaitlistHero />
-      <Footer />
     </>
   );
 }

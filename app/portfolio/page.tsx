@@ -8,7 +8,7 @@ import Pricing from "@/components/pricing-base";
 import { FrequencyCircle } from "@/components/FrequencyCircle";
 import Button from "@/components/Header/button";
 import RadialScrollGalleryExample from "@/components/RadialScrollGallery";
-
+import FeaturesSection from "@/components/scrollreveal";
 export default function PortfolioPage({
   isActiveProp,
 }: {
@@ -69,7 +69,8 @@ export default function PortfolioPage({
 
       <RadialScrollGalleryExample />
       <FrequencyCircle />
-      <Pricing />
+       <FeaturesSection />
+  
     </>
   );
 }
